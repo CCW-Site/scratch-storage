@@ -4,8 +4,32 @@ const crossFetch = require('cross-fetch').default;
 
 let jobsActive = 0;
 const complete = [];
-
+const MAX_MYSQLADMIN_STATUS = 200;
 let intervalId = null;
+
+/**
+ * A Fetch method that limits the maximum number of concurrent requests
+ */
+const _fetch = (function () {
+    const queue = [];
+    let pendingCount = 0;
+
+    return async function (...args) {
+        if (pendingCount >= MAX_MYSQLADMIN_STATUS) {
+            return new Promise((resolve, reject) => {
+                queue.push({args, resolve, reject});
+            });
+        }
+        pendingCount++;
+        const res = await fetch(...args);
+        pendingCount--;
+        if (queue.length) {
+            const {args: _args, resolve, reject} = queue.shift();
+            _fetch(..._args).then(resolve, reject);
+        }
+        return res;
+    };
+}());
 
 /**
  * Register a step function.
