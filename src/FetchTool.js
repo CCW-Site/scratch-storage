@@ -20,7 +20,12 @@ class FetchTool {
      */
     get ({url, ...options}) {
         return fetch(url, Object.assign({method: 'GET'}, options))
-            .then(result => result.arrayBuffer())
+            .then(result => {
+                if (result.status === 404) {
+                    throw new Error('404 Not found');
+                }
+                return result.arrayBuffer();
+            })
             .then(body => new Uint8Array(body));
     }
 

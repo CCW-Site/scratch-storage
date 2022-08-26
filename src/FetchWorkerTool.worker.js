@@ -20,6 +20,7 @@ const _fetch = (function () {
         }
         pendingCount++;
         const res = await fetch(...args);
+
         pendingCount--;
         if (queue.length) {
             const {args: _args, resolve, reject} = queue.shift();
@@ -73,7 +74,12 @@ const onMessage = ({data: job}) => {
     jobsActive++;
 
     _fetch(job.url, job.options)
-        .then(response => response.arrayBuffer())
+        .then(response => {
+            if (response.status === 404) {
+                throw new Error('404 Not found');
+            }
+            return response.arrayBuffer();
+        })
         .then(buffer => complete.push({id: job.id, buffer}))
         .catch(error => complete.push({id: job.id, error}))
         .then(() => jobsActive--);
