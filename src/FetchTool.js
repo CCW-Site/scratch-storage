@@ -16,17 +16,15 @@ class FetchTool {
      * Request data from a server with fetch.
      * @param {{url:string}} reqConfig - Request configuration for data to get.
      * @param {{method:string}} options - Additional options to configure fetch.
-     * @returns {Promise.<Uint8Array>} Resolve to Buffer of data from server.
+     * @returns {Promise.<Uint8Array | null>} Resolve to Buffer of data from server.
      */
     get ({url, ...options}) {
         return fetch(url, Object.assign({method: 'GET'}, options))
             .then(result => {
-                if (result.status === 404) {
-                    throw new Error('404 Not found');
-                }
-                return result.arrayBuffer();
-            })
-            .then(body => new Uint8Array(body));
+                if (result.ok) return result.arrayBuffer().then(b => new Uint8Array(b));
+                if (result.status === 404) return null;
+                return Promise.reject(result.status);
+            });
     }
 
     /**
