@@ -95,6 +95,20 @@ class Asset {
 
         /** @type {Asset[]} */
         this.dependencies = [];
+
+        /** @type {boolean} */
+        this.externalSource = false; // mark if this asset is from external source
+    }
+
+    get clean () {
+        // return false when externalSource is true to upload file.
+        return this._clean && !this.externalSource;
+    }
+
+    set clean (clean) {
+        this._clean = clean;
+        // if this asset is set clean, it not from external source
+        this.externalSource = true;
     }
 
     setData (data, dataFormat, generateId) {
@@ -112,7 +126,7 @@ class Asset {
 
         // Mark as clean only if set is being called without generateId
         // If a new id is being generated, mark this asset as not clean
-        this.clean = !generateId;
+        this._clean = !generateId;
     }
 
     /**
