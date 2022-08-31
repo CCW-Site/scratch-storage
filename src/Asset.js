@@ -108,7 +108,7 @@ class Asset {
     set clean (clean) {
         this._clean = clean;
         // if this asset is set clean, it not from external source
-        this.externalSource = true;
+        this.externalSource = false;
     }
 
     setData (data, dataFormat, generateId) {
