@@ -40,6 +40,18 @@ const AssetType = {
         name: 'Sprite',
         runtimeFormat: DataFormat.JSON,
         immutable: true
+    },
+    Python: {
+        contentType: 'text/plain',
+        name: 'Python',
+        runtimeFormat: DataFormat.PYTHON,
+        immutable: true
+    },
+    Json: {
+        contentType: 'application/json',
+        name: 'Json',
+        runtimeFormat: DataFormat.JSON,
+        immutable: true
     }
 };
 
