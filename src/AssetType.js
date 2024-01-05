@@ -52,6 +52,18 @@ const AssetType = {
         name: 'Json',
         runtimeFormat: DataFormat.JSON,
         immutable: true
+    },
+    Extension: {
+        contentType: 'text/javascript',
+        name: 'Extension',
+        runtimeFormat: DataFormat.JAVASCRIPT,
+        immutable: true
+    },
+    JavaScript: {
+        contentType: 'text/javascript',
+        name: 'JavaScript',
+        runtimeFormat: DataFormat.JAVASCRIPT,
+        immutable: true
     }
 };
 

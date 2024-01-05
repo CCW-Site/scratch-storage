@@ -11,7 +11,8 @@ const DataFormat = {
     SB3: 'sb3',
     SVG: 'svg',
     WAV: 'wav',
-    PYTHON: 'py'
+    PYTHON: 'py',
+    JAVASCRIPT: 'js'
 };
 
 module.exports = DataFormat;
