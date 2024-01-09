@@ -64,6 +64,12 @@ const AssetType = {
         name: 'JavaScript',
         runtimeFormat: DataFormat.JAVASCRIPT,
         immutable: true
+    },
+    GLSL: {
+        contentType: 'text/plain',
+        name: 'GLSL',
+        runtimeFormat: DataFormat.GLSL,
+        immutable: true
     }
 };
 
