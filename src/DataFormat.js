@@ -12,7 +12,8 @@ const DataFormat = {
     SVG: 'svg',
     WAV: 'wav',
     PYTHON: 'py',
-    JAVASCRIPT: 'js'
+    JAVASCRIPT: 'js',
+    GLSL: 'glsl'
 };
 
 module.exports = DataFormat;
