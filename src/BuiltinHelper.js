@@ -42,6 +42,46 @@ const DefaultAssets = [
         data: Buffer.from(
             require('!arraybuffer-loader!./builtins/defaultVector.svg') // eslint-disable-line global-require
         )
+    },
+    {
+        type: AssetType.Python,
+        format: DataFormat.PYTHON,
+        id: null,
+        data: Buffer.from(
+            require('!arraybuffer-loader!./builtins/defaultPython.py') // eslint-disable-line global-require
+        )
+    },
+    {
+        type: AssetType.Json,
+        format: DataFormat.JSON,
+        id: null,
+        data: Buffer.from(
+            require('!arraybuffer-loader!./builtins/defaultJson.txt') // eslint-disable-line global-require
+        )
+    },
+    {
+        type: AssetType.Extension,
+        format: DataFormat.JAVASCRIPT,
+        id: null,
+        data: Buffer.from(
+            require('!arraybuffer-loader!./builtins/defaultJavascript.js') // eslint-disable-line global-require
+        )
+    },
+    {
+        type: AssetType.JavaScript,
+        format: DataFormat.JAVASCRIPT,
+        id: null,
+        data: Buffer.from(
+            require('!arraybuffer-loader!./builtins/defaultJavascript.js') // eslint-disable-line global-require
+        )
+    },
+    {
+        type: AssetType.GLSL,
+        format: DataFormat.GLSL,
+        id: null,
+        data: Buffer.from(
+            require('!arraybuffer-loader!./builtins/defaultGlsl.glsl') // eslint-disable-line global-require
+        )
     }
 ];
 
