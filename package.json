@@ -10,7 +10,7 @@
     "sha": "ea7ac5ad4d084c2033d1d949c92d91c605dafc84"
   },
   "main": "./dist/node/scratch-storage.js",
-  "browser": "./dist/web/scratch-storage.js",
+  "browser": "./src/index.js",
   "scripts": {
     "build": "webpack --progress --colors --bail",
     "commitmsg": "commitlint -e $GIT_PARAMS",
