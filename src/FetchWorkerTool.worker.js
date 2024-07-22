@@ -21,7 +21,7 @@ const _fetch = (function () {
             });
         }
         pendingCount++;
-        const res = await fetch(...args);
+        const res = await crossFetch(...args);
         pendingCount--;
         if (queue.length) {
             const {args: _args, resolve, reject} = queue.shift();
@@ -74,7 +74,7 @@ const onMessage = ({data: job}) => {
 
     jobsActive++;
 
-    crossFetch(job.url, job.options)
+    _fetch(job.url, job.options)
         .then(result => {
             if (result.ok) return result.arrayBuffer();
             if (result.status === 404) return null;
