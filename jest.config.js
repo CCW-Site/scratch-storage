@@ -1,5 +1,6 @@
 module.exports = {
     transform: {
-        '\\.(png|svg|wav)$': '<rootDir>/test/transformers/arraybuffer-loader.js'
+        '\\.(png|svg|wav|py|txt|glsl)$|(^|/)builtins/defaultJavascript.js$':
+            '<rootDir>/test/transformers/arraybuffer-loader.js'
     }
 };

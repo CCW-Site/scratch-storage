@@ -26,7 +26,7 @@ const base = {
                 }
             },
             {
-                test: /\.(png|svg|wav)$/,
+                test: /\.(png|svg|wav|py|txt|glsl)$|(^|\/)builtins\/defaultJavascript\.js$/,
                 loader: 'arraybuffer-loader'
             }
         ]

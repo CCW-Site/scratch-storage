@@ -48,7 +48,7 @@ const DefaultAssets = [
         format: DataFormat.PYTHON,
         id: null,
         data: Buffer.from(
-            require('!arraybuffer-loader!./builtins/defaultPython.py') // eslint-disable-line global-require
+            require('./builtins/defaultPython.py') // eslint-disable-line global-require
         )
     },
     {
@@ -56,7 +56,7 @@ const DefaultAssets = [
         format: DataFormat.JSON,
         id: null,
         data: Buffer.from(
-            require('!arraybuffer-loader!./builtins/defaultJson.txt') // eslint-disable-line global-require
+            require('./builtins/defaultJson.txt') // eslint-disable-line global-require
         )
     },
     {
@@ -64,7 +64,7 @@ const DefaultAssets = [
         format: DataFormat.JAVASCRIPT,
         id: null,
         data: Buffer.from(
-            require('!arraybuffer-loader!./builtins/defaultJavascript.js') // eslint-disable-line global-require
+            require('./builtins/defaultJavascript.js') // eslint-disable-line global-require
         )
     },
     {
@@ -72,7 +72,7 @@ const DefaultAssets = [
         format: DataFormat.JAVASCRIPT,
         id: null,
         data: Buffer.from(
-            require('!arraybuffer-loader!./builtins/defaultJavascript.js') // eslint-disable-line global-require
+            require('./builtins/defaultJavascript.js') // eslint-disable-line global-require
         )
     },
     {
@@ -80,7 +80,7 @@ const DefaultAssets = [
         format: DataFormat.GLSL,
         id: null,
         data: Buffer.from(
-            require('!arraybuffer-loader!./builtins/defaultGlsl.glsl') // eslint-disable-line global-require
+            require('./builtins/defaultGlsl.glsl') // eslint-disable-line global-require
         )
     }
 ];
