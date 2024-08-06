@@ -1,13 +1,13 @@
 {
   "name": "@xigua/scratch-storage",
-  "version": "2.3.186",
+  "version": "2.3.187",
   "description": "Load and store project and asset files for Scratch 3.0",
   "license": "BSD-3-Clause",
   "homepage": "https://github.com/scratchfoundation/scratch-storage#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/scratchfoundation/scratch-storage.git",
-    "sha": "84134aac04a2d8b9c5352565d82d072a7646217e"
+    "sha": "83683f12783c3aa548eab39928f0424dad3fdcd5"
   },
   "main": "./dist/node/scratch-storage.js",
   "browser": "./dist/web/scratch-storage.js",
@@ -15,7 +15,7 @@
     "build": "webpack --progress --colors --bail",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "coverage": "tap ./test/{unit,integration}/*.js --coverage --coverage-report=lcov",
-    "prepare": "husky install",
+    "prepublishOnly": "npm run build",
     "semantic-release": "semantic-release",
     "test": "npm run test:lint && jest \"test[\\\\/](unit|integration)\"",
     "test:clearCache": "jest --clearCache",
